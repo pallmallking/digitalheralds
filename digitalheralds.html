@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigative Report: The Case of Digital Heralds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-white">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-black brand-text-main uppercase tracking-wider">Case File: Digital Heralds</h1>
+            <p class="text-xl md:text-2xl brand-text-accent font-bold mt-2">Verdict: Not a Legitimate Company</p>
+            <p class="max-w-4xl mx-auto mt-4 brand-text-secondary">
+                A comprehensive investigation into the entity known as "Digital Heralds" and its associated UK charity, "Digital Heralds CIO," has uncovered a series of critical failures and fraudulent data points. The evidence overwhelmingly indicates a phantom operation designed to mislead. This report visualizes the key findings that expose its illegitimacy.
+            </p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="lg:col-span-3 brand-bg-card rounded-lg shadow-2xl p-6 md:p-8">
+                <h2 class="section-title brand-text-main text-center">Key Red Flags at a Glance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 text-center">
+                    <div class="flex flex-col items-center justify-center p-4 brand-bg-card rounded-lg border-2 brand-border-color">
+                         <p class="kpi-value">0</p>
+                         <p class="kpi-label">Functional Web Pages</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-4 brand-bg-card rounded-lg border-2 brand-border-color">
+                         <p class="text-4xl font-black brand-text-accent">2025</p>
+                         <p class="kpi-label">Impossible Registration Year</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-4 brand-bg-card rounded-lg border-2 brand-border-color">
+                         <p class="kpi-value">1</p>
+                         <p class="kpi-label">Address for 2 Companies</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-4 brand-bg-card rounded-lg border-2 brand-border-color">
+                         <p class="kpi-value">2</p>
+                         <p class="kpi-label">Unwitting Board Members</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-1 brand-bg-card rounded-lg shadow-2xl p-6 md:p-8 flex flex-col">
+                <h3 class="section-title brand-text-main">Digital Black Hole</h3>
+                <p class="brand-text-secondary mt-4 mb-6 flex-grow">
+                    The company's primary domain, `digitalheralds.com`, is completely inaccessible. For an entity positioning itself in the digital space, this lack of a basic online presence is a foundational failure. No homepage, no contact information, and no transparent domain ownership record could be found, rendering it a digital ghost.
+                </p>
+                <div class="chart-container h-64">
+                    <canvas id="digitalPresenceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-2 brand-bg-card rounded-lg shadow-2xl p-6 md:p-8">
+                 <h3 class="section-title brand-text-main">The Impossible Registration</h3>
+                <p class="brand-text-secondary mt-4 mb-6">
+                    The most damning piece of evidence is the official registration date for "Digital Heralds CIO" (Charity No. 1212916). Corporate records list its creation on **April 11, 2025**—a future date. This is a temporal and legal impossibility, indicating that the registration itself is fraudulent or fictitious. This single fact invalidates any claim to legitimacy.
+                </p>
+                <div class="chart-container h-64">
+                    <canvas id="registrationTimelineChart"></canvas>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 brand-bg-card rounded-lg shadow-2xl p-6 md:p-8">
+                <h3 class="section-title brand-text-main text-center">Corporate Genealogy: A Trail of Suspicion</h3>
+                <p class="brand-text-secondary mt-4 text-center max-w-4xl mx-auto">The registered address for "Digital Heralds CIO" reveals a link to a previously dissolved company, directed by the same individual. This pattern of creating and dissolving entities at a single residential address is a hallmark of shell company operations.</p>
+                <div class="mt-8">
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+
+                        <div class="brand-bg-card border-2 brand-border-color rounded-lg p-6 text-center w-full md:w-1/3">
+                            <h4 class="text-xl font-bold brand-text-main">CHDD APPLIED RESEARCH LTD.</h4>
+                            <p class="brand-text-accent font-semibold">Company No. 10515154</p>
+                            <p class="brand-text-secondary mt-2">Incorporated: Dec 7, 2016</p>
+                            <p class="brand-text-secondary">Dissolved: Sep 22, 2020</p>
+                            <p class="mt-4 font-bold">Director: Christopher Davis</p>
+                        </div>
+
+                        <div class="flow-arrow md:rotate-0 rotate-90">&rarr;</div>
+
+                        <div class="brand-bg-card border-2 brand-border-color rounded-lg p-6 text-center w-full md:w-1/3">
+                            <h4 class="text-xl font-bold brand-text-main">Digital Heralds CIO</h4>
+                            <p class="brand-text-accent font-semibold">Charity No. 1212916</p>
+                            <p class="brand-text-secondary mt-2">Registered: Apr 11, 2025</p>
+                            <p class="brand-text-secondary">(Impossible Date)</p>
+                            <p class="mt-4 font-bold">Chair: Christopher Davis</p>
+                        </div>
+                    </div>
+                     <p class="text-center mt-6 text-lg font-bold brand-text-accent">Same Address: 44 Westbrook Crescent, Barnet, England</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 brand-bg-card rounded-lg shadow-2xl p-6 md:p-8">
+                <h3 class="section-title brand-text-main text-center">Reputation Laundering: Misusing Good Names</h3>
+                <p class="brand-text-secondary mt-4 text-center max-w-4xl mx-auto">The board lists two highly respected, award-winning community leaders alongside the central figure. It is profoundly unlikely these individuals are knowingly involved. The evidence strongly suggests their names are being used without consent to lend a false veneer of credibility to a phantom organization.</p>
+                <div class="mt-8 overflow-x-auto">
+                    <table class="w-full text-left min-w-[600px]">
+                        <thead>
+                            <tr class="border-b-2 brand-border-color">
+                                <th class="p-4 text-lg font-bold brand-text-main">Individual</th>
+                                <th class="p-4 text-lg font-bold brand-text-main">Role</th>
+                                <th class="p-4 text-lg font-bold brand-text-main">Verifiable Affiliation</th>
+                                <th class="p-4 text-lg font-bold brand-text-main">Assessment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-4 font-semibold brand-text-main">Christopher Davis</td>
+                                <td class="p-4 brand-text-secondary">Chair</td>
+                                <td class="p-4 brand-text-secondary">Director of Dissolved Precursor Co.</td>
+                                <td class="p-4 brand-text-accent font-bold">The Nexus of Suspicious Activity</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-4 font-semibold brand-text-main">Victoria Miller, BEM</td>
+                                <td class="p-4 brand-text-secondary">Member</td>
+                                <td class="p-4 brand-text-secondary">Manager, Chipping Barnet Foodbank</td>
+                                <td class="p-4 text-green-400 font-bold">Unwitting Reputable Associate</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold brand-text-main">Margaret Spillman</td>
+                                <td class="p-4 brand-text-secondary">Member</td>
+                                <td class="p-4 brand-text-secondary">Trustee, Chipping Barnet Foodbank</td>
+                                <td class="p-4 text-green-400 font-bold">Unwitting Reputable Associate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center my-12 text-sm brand-text-secondary">
+            <p>This infographic is based on a detailed analysis of public records and digital forensics. All data points are sourced from the investigative report.</p>
+            <p class="mt-2">Recommendation: Avoid any and all interaction with entities claiming to be "Digital Heralds."</p>
+        </footer>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
