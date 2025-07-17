@@ -9,7 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+        }
+        .brand-text-main { color: #FFFFFF; }
+        .brand-text-accent { color: #FF4136; }
+        .brand-text-secondary { color: #BDBDBD; }
+        .brand-bg-card { background-color: #262626; }
+
+        .brand-border-color { border-color: #FF4136; }
+        .kpi-value { font-size: 4rem; font-weight: 900; line-height: 1; color: #FF4136; }
+        .kpi-label { font-size: 1.125rem; font-weight: 700; color: #FFFFFF; margin-top: 0.5rem; }
+        .section-title { font-size: 2.25rem; font-weight: 900; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+
+        .flow-arrow { position: relative; text-align: center; margin: 1.5rem 0; color: #BDBDBD; font-size: 2.5rem; font-weight: bold; }
+    </style>
 </head>
 <body class="text-white">
 
@@ -140,6 +157,117 @@
 
     </div>
 
-    <script src="js/app.js"></script>
+    <script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        const digitalPresenceCtx = document.getElementById('digitalPresenceChart').getContext('2d');
+        new Chart(digitalPresenceCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Accessible Pages', 'Inaccessible / Non-existent Pages'],
+                datasets: [{
+                    label: 'Digital Presence',
+                    data: [0, 100],
+                    backgroundColor: ['#4CAF50', '#FF4136'],
+                    borderColor: '#262626',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#FFFFFF', font: { size: 14 } }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Website & Domain Status',
+                        color: '#FFFFFF',
+                        font: { size: 18, weight: 'bold' }
+                    },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        const registrationTimelineCtx = document.getElementById('registrationTimelineChart').getContext('2d');
+        new Chart(registrationTimelineCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Investigation Period'), wrapLabel('Stated Registration Date')],
+                datasets: [{
+                    label: 'Year',
+                    data: [2024, 2025],
+                    backgroundColor: ['#36A2EB', '#FF4136'],
+                    borderColor: ['#36A2EB', '#FF4136'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: false,
+                        min: 2023,
+                        max: 2026,
+                        ticks: {
+                            color: '#FFFFFF',
+                            stepSize: 1
+                        },
+                      grid: { color: 'rgba(255, 255, 255, 0.2)' }
+                    },
+                    y: {
+                        ticks: { color: '#FFFFFF', font: { size: 14 } },
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Timeline Anomaly',
+                        color: '#FFFFFF',
+                        font: { size: 18, weight: 'bold' }
+                    },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
